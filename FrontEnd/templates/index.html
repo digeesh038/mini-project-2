@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicinal leaves Identification</title>
+    <link rel="stylesheet" href="../static/stylesheets/style.css">
+    <link rel="icon" type="image/x-icon" href="../static/img/webpage_logo_final.png">
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/kfx0vct.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <div class="textandlogo">
+                    <a href="/" class="logo"> <img src="../static/img/logo.svg" alt="logo"> </a>
+                    <span class="logoname"><h1>Medicinal leaves</h1></span>
+                </div>
+            </nav>
+        </header>
+        <div class="tool-section">
+            <h1 class="toolheading">Medicinal leaves Identification</h1>
+            <p class="slogan">Analyze leaf images and identify their uses</p>
+            <div class="toolwindow">
+                <div class="section">
+                    <div class="tool-span">
+                        <div class="uploadsection" id="upsectionIndex" ondrop="dropHandler(event)" ondragover="dragOverHandler(event)">
+                            <div class="before-upload upload-area" id="bef-up">
+                                <div class="afterImage" id="something">
+                                    <img id="image" style="width:auto; height:120px; margin-bottom: 1rem;" class="normal"/>
+                                </div>
+                                <label><img id="svgImage" src="../static/img/tool-box-image.svg" alt="image-logo"></label>
+                                <span class="drag-n-drop-text" id="js-drag-n-drop">Upload The Image <br></span>
+                                <label id="svgImage2" for="file" class="browse-btn">
+                                    <img src="../static/img/plus-icon.svg" alt="file upload">
+                                    <span> Browse </span>
+                                </label>
+                                <form action="/upload" method="POST" enctype="multipart/form-data">
+                                    <input type="file" name="file" id="file" hidden="" accept=".jpg,.jpeg,.jpe" onchange="handleFileSelect(event)">
+                                    <input type="submit" class="custom-button" id="submit-button" value="Submit">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../static/scripts/script.js" defer></script>
+</html>
